@@ -1,0 +1,12 @@
+#ifndef DM_LOGCON_LIB_GLOBAL_H
+#define DM_LOGCON_LIB_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(DM_LOGCON_LIB_LIBRARY)
+#  define DM_LOGCON_LIBSHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define DM_LOGCON_LIBSHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // DM_LOGCON_LIB_GLOBAL_H
