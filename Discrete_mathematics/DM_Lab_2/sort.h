@@ -1,18 +1,14 @@
-#ifndef SORT
-#define SORT
-#include <iostream>
+#ifndef SORT_H
+#define SORT_H
 #include <vector>
 using namespace std;
-class Sort
+class sort
 {
 public:
-    Sort();
-    static void SortSelection( int n, vector <int> s,int l, int r);
-    static void SortBubble   ( int n, vector <int> s,int l, int r);
-    static void SortInsertion( int n, vector <int> s,int l, int r);
-    static int  MinIteam( vector<int> s, int j, int r);
-    static int  MaxIteam( vector<int> s, int j, int r);
-
+    sort();
+     void SortSelection(int n, vector<int> s);
+     void SortInsertion(int n, vector<int> s);
+     void SortBubble   (int n, vector<int> s);
 };
 
-#endif // SORT
+#endif // SORT_H

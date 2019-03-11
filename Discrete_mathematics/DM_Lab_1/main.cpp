@@ -1,7 +1,7 @@
 #include <QCoreApplication>
 
 #include <iostream>
-#include "/home/daniel/Git/Discrete-math/Dm_LogCon_Lib/dm_logcon_lib.h"
+#include "/home/daniel/GIT/1.2_CS_LNU/Discrete_mathematics/DM_Lab_1/dm_logcon_lib.h"
 
 using namespace std;
 int main()

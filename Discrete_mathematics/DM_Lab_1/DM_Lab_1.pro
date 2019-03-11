@@ -16,7 +16,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    ../Dm_LogCon_Lib/dm_logcon_lib.cpp
+    ../Dm_LogCon_Lib/dm_logcon_lib.cpp \
+    dm_logcon_lib.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -25,4 +26,12 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 HEADERS += \
     ../Dm_LogCon_Lib/dm_logcon_lib_global.h \
-    ../Dm_LogCon_Lib/dm_logcon_lib.h
+    ../Dm_LogCon_Lib/dm_logcon_lib.h \
+    dm_logcon_lib_global.h \
+    dm_logcon_lib.h
+
+SUBDIRS += \
+    Dm_LogCon_Lib.pro
+
+DISTFILES += \
+    Dm_LogCon_Lib.pro.user

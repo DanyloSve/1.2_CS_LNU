@@ -1,89 +1,77 @@
 #include "sort.h"
-
-Sort::Sort()
+#include <iostream>
+#include <vector>
+using namespace std;
+sort::sort()
 {
-
 }
 
-void Show(int n, vector<int> s)
+void sort::SortSelection(int n, vector<int> s)
 {
-    for(int i(0); i < n; i++)
-    {
-        cout<<s[i]<<' ';
-    }
-    cout<<endl;
-}
-void Swap(int &a, int &b){
-    int t = a;
-    a = b;
-    b = t;
-}
-
-int Sort::MinIteam( vector<int> s, int j, int r)
-{
-    int min(j);
-    for(int k = j; k < r; k++)
-    {
-        if(s[k] < s[min])
+    int min,p(n) ;
+        for(int i = 0; i < n; i++)
         {
-            min = k;
-        }
-    }
-    return min;
-}
-
-int Sort::MaxIteam( vector<int> s, int j, int r)
-{
-    int max(j);
-    for(int k = j; k < r; k++)
-    {
-        if(s[k] > s[max])
-        {
-            max = k;
-        }
-    }
-    return max;
-}
-
-void Sort::SortSelection(int n, vector<int> s,int l, int r)
-{
-   int min;
-    for(int j(l); j < r ; j++)
-    {
-        min = j;
-        Swap (s[MinIteam(s,j,r)], s[j]);
-        }
-    Show(n, s);
-}
-
-void Sort::SortBubble(int n, vector<int> s,int l, int r)
-{
-  for(int j(0); j < r; j++)
-    {
-        int m(l);
-        for(int i(l+1); i < r; i++)
-        {
-            if(s[m] > s[i])
+            min = i;
+            for(int k = i; k < n ; k++)
             {
-              Swap(s[m], s[i]);
+                if(s[k] < s[min])
+                 min = k;
             }
-            m++;
+
+            n = s[i];
+            s[i] = s[min];
+            s[min] = n;
         }
-    }
-  Show(n, s);
+        for(int i(0); i < p; i++)
+        {
+            cout<<s[i];
+        }
 }
 
-void Sort::SortInsertion(int n, vector<int> s,int l, int r)
+void sort::SortInsertion(int n, vector<int> s)
 {
-    for(int j(l); j < r;j++ )
+    int p(n);
+    for(int j(0); j < n; j++)
     {
-        for(int i(l); i < r; i++)
+        for(int i(0); i < n; i++)
         {
-           if(s[i] > s[j])
+            if (s[i] > s[j])
             {
-                Swap(s[i], s[j]);
+                swap(s[i], s[j]);
             }
         }
     }
-    Show(n, s);
+    for(int i(0); i < p; i++)
+    {
+        cout<<s[i];
+    }
 }
+
+void sort::SortBubble(int n, vector<int> s)
+{ int p(n);
+    for (int j = 1; j < n ; j++)
+   {
+    int m (0);
+    for (int i = 1; i < n ; i++)
+    {
+
+        if(s[m] > s[i])
+        {
+            swap(s[m] , s[i]);
+        }
+        m++;
+    }
+   }
+
+    for(int i(0); i < p; i++)
+    {
+        cout<<s[i];
+    }
+
+}
+
+
+
+
+
+
